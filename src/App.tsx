@@ -1,10 +1,12 @@
+import { useState } from "react";
 import "./App.css";
+import { EventButton } from "./components/EventButton";
+import { EventInput } from "./components/EventInput";
 import { Greet } from "./components/Greet";
 import { Person } from "./components/Person";
 import { PersonList } from "./components/PersonList";
 
 function App() {
-
   // Object props type
   const PersonName = {
     first: "Tom",
@@ -26,11 +28,32 @@ function App() {
       last: "Weasley",
     },
   ];
+
+  {
+    /* Event handling props input change */
+  }
+
+  const [text, setText] = useState("");
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setText(event.target.value); // Update the state when the input changes
+    console.log("Change text:", event.target.value); // Log the value
+  };
   return (
     <>
+      {/* Basics props */}
       <Greet name="Typescript" yearsCount={2025} isLoggedIn={false} />
+      {/* Objects props */}
       <Person name={PersonName} />
-      <PersonList names={PersonNames}/>
+      {/* Array props */}
+      <PersonList names={PersonNames} />
+      {/* Event handling props Button clicked */}
+      <EventButton
+        handleClick={(event, id) => {
+          console.log("Button clicked", event, id);
+        }}
+      />
+      {/* Event handling props input change */}
+      <EventInput value={text} handleChange={handleChange} />
     </>
   );
 }
