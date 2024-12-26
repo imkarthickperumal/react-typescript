@@ -6,6 +6,7 @@ import { Greet } from "./components/Greet";
 import { Person } from "./components/Person";
 import { PersonList } from "./components/PersonList";
 import { StyleContainer } from "./components/StyleContainer";
+import { User } from "./components/state/User";
 
 function App() {
   // Object props type
@@ -57,7 +58,12 @@ function App() {
       <EventInput value={text} handleChange={handleChange} />
 
       {/* Style props */}
-      <StyleContainer styles={{ border: "1px solid #000000", margin: "1rem" }} />
+      <StyleContainer
+        styles={{ border: "1px solid #000000", margin: "1rem" }}
+      />
+
+      {/* useState Props */}
+      <User />
     </>
   );
 }

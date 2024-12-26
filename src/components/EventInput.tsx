@@ -4,6 +4,7 @@ type EventInputProps = {
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
+// export const EventInput = ({value, handleChange}: EventInputProps) => { ==> Destructing props
 export const EventInput = (props: EventInputProps) => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     props.handleChange(event); // Invoke the parent's handleChange function
