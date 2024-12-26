@@ -6,20 +6,20 @@ type Authuser = {
 };
 export const User = () => {
   const [user, setUser] = useState<Authuser>({} as Authuser);
-//   const [user, setUser] = useState<Authuser | null>(null);
+  //const [user, setUser] = useState<Authuser | null>(null);
   const handleLogin = () => {
     setUser({
       name: "Karthick",
       email: "karthick@gmail.com",
     });
   };
-//   const handleLogout = () => {
-//     setUser(null);
-//   };
-// if encased default user null aftr mount update a state
-//   const handleLogout = () => {
-//     setUser(null);
-//   };
+  //   const handleLogout = () => {
+  //     setUser(null);
+  //   };
+  // if encased default user null aftr mount update a state
+  //   const handleLogout = () => {
+  //     setUser(null);
+  //   };
   return (
     <div>
       <button onClick={handleLogin}>Log in</button>

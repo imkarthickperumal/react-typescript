@@ -7,6 +7,7 @@ import { Person } from "./components/Person";
 import { PersonList } from "./components/PersonList";
 import { StyleContainer } from "./components/StyleContainer";
 import { User } from "./components/state/User";
+import { Counter } from "./components/state/Counter";
 
 function App() {
   // Object props type
@@ -64,6 +65,9 @@ function App() {
 
       {/* useState Props */}
       <User />
+
+      {/* useReducer Props */}
+      <Counter />
     </>
   );
 }
