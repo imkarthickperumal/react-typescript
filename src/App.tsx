@@ -8,6 +8,8 @@ import { PersonList } from "./components/PersonList";
 import { StyleContainer } from "./components/StyleContainer";
 import { User } from "./components/state/User";
 import { Counter } from "./components/state/Counter";
+import { Box } from "./components/context/Box";
+import { ThemeContextProvider } from "./components/context/ThemeContext";
 
 function App() {
   // Object props type
@@ -68,6 +70,9 @@ function App() {
 
       {/* useReducer Props */}
       <Counter />
+      <ThemeContextProvider>
+        <Box />
+      </ThemeContextProvider>
     </>
   );
 }
